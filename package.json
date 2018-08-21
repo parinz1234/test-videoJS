@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "video.js": "^7.1.0",
+    "videojs-playlist": "^4.2.3"
+  }
+}

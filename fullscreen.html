@@ -34,31 +34,64 @@
       });
       // myPlayer.src('./TextInMotion-Sample-1080p.mp4');
       // myPlayer.src('./jellyfish-25-mbps-hd-hevc.mp4');
-      myPlayer.playlist([{
-          sources: [{
-              src: './video/TextInMotion-Sample-1080p.mp4',
+      myPlayer.playlist([
+        {
+          sources: [
+            {
+              src: './video/SampleVideo_1280x720_30mb.mp4',
               type: 'video/mp4'
-          }],
+            }
+          ],
           // poster: 'http://media.w3.org/2010/05/sintel/poster.png'
-          }, {
-          sources: [{
-              src: './video/jellyfish-25-mbps-hd-hevc.mp4',
+        },
+        {
+          sources: [
+            {
+              src: './video/lomo.mp4',
               type: 'video/mp4'
-          }],
-          // poster: 'http://media.w3.org/2010/05/bunny/poster.png'
-          }
+            }
+          ],
+          // poster: 'http://media.w3.org/2010/05/sintel/poster.png'
+        },
+        {
+          sources: [
+            {
+              src: './video/SampleVideo_1280x720_30mb.mp4',
+              type: 'video/mp4'
+            }
+          ]
+        }
       ]);
 
        // Play through the playlist automatically. 
-       myPlayer.playlist.autoadvance(0);
+       myPlayer.playlist.autoadvance();
 
       /* set playlist repeat */
       //  myPlayer.playlist.repeat(true)
 
       myPlayer.on('ended', function (e) {
+        console.log('ended')
         console.log(e)
-        if (myPlayer.playlist.currentItem() == 1)
-          console.log('next')
+      })
+
+      myPlayer.on('ended', function (e) {
+        console.log('ended')
+        console.log(e)
+      })
+
+      myPlayer.on('pause', function (e) {
+        console.log('pause')
+        console.log(e)
+      })
+
+      myPlayer.on('play', function (e) {
+        console.log('play')
+        console.log(e)
+      })
+
+      myPlayer.on('playing', function (e) {
+        console.log('playing')
+        console.log(e)
       })
 
     })
